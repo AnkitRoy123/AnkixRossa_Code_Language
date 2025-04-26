@@ -65,10 +65,13 @@ secure = [
     ('8', '1000'),
     ('9', '1001')
 ]
-
-
 password = str(input("Enter your sentences:\n"))
 def converter(s,p):
     for a,b in s:
       p = p.replace(a,b)
     print(p)
+converter(secure,password)
+def generate_nine_digit_number():
+    number = random.randint(100000000, 999999999)
+    return number
+print(generate_nine_digit_number())
