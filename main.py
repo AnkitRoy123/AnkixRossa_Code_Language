@@ -33,7 +33,7 @@ secure = [
     ('d', 'd'),
     ('e', '€'),
     ('f', 'ƒ'),
-    ('g', '9'),
+    ('g', 'g'),
     ('h', 'h'),
     ('i', '¡'),
     ('j', 'j'),
@@ -70,7 +70,7 @@ print("Type 0 for real language to ")
 print("code language and type 1 for")
 print("code language to real language.")
 x = str(input("\nEnter what number you want: "))
-password = str(input("Enter your sentences:\n"))
+password = str(input("Enter your sentences: "))
 def lang_to_code(s,p):
     for a,b in s:
       p = p.replace(a,b)
@@ -80,11 +80,13 @@ def code_to_lang(s,p):
      p = p.replace(b,a)
     print(p)
 def generate_nine_digit_number():
-    number = random.randint(100000000, 999999999)
+    number = random.randint(10000000000, 99999999999)
     return number
+print("Translation:-")
 match x:
   case "0":
     lang_to_code(secure, password)
+    print()
     print(generate_nine_digit_number())
   case "1": code_to_lang(secure, password)
   case _ : print("Invalid input.")
